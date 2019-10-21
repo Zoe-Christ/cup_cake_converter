@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String sSelected = parent.getItemAtPosition(position).toString();
-        Toast.makeText(this, sSelected, Toast.LENGTH_SHORT.show();
+        Toast.makeText(this, sSelected, Toast.LENGTH_SHORT).show();
     }
 
     @Override
