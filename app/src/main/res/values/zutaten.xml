@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="zutaten_string">
+        <item>Mehl</item>
+        <item>Zucker</item>
+        <item>Butter</item>
+        <item>Backpulver</item>
+        <item>Haselnüsse</item>
+        <item>Kakaopulver</item>
+    </string-array>
+</resources>
