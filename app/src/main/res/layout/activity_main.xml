@@ -47,7 +47,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextMenge"
         app:layout_constraintVertical_bias="0.222"
-        tools:text="CONVERT" />
+        tools:text="@string/convert" />
 
     <Button
         android:id="@+id/buttonHelp"
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@android:color/holo_blue_light"
-        android:text="HELP"
+        android:text="@string/help"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.919"
         app:layout_constraintStart_toStartOf="parent"
