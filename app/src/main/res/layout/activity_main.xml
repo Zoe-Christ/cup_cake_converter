@@ -37,8 +37,8 @@
 
     <Button
         android:id="@+id/buttonConverter"
-        android:layout_width="142dp"
-        android:layout_height="56dp"
+        android:layout_width="163dp"
+        android:layout_height="73dp"
         android:background="@android:color/background_light"
         android:padding="5sp"
         android:textSize="24sp"
