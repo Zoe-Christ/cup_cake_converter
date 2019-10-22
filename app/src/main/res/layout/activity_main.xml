@@ -11,17 +11,17 @@
         android:id="@+id/editTextMenge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         android:background="@android:color/background_light"
         android:ems="10"
         android:hint="quantity in kg"
         android:inputType="textPersonName"
         android:padding="5sp"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerZutaten"
-        app:layout_constraintVertical_bias="0.154" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerZutaten" />
 
     <Spinner
         android:id="@+id/spinnerZutaten"
@@ -48,4 +48,16 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextMenge"
         app:layout_constraintVertical_bias="0.222"
         tools:text="CONVERT" />
+
+    <Button
+        android:id="@+id/buttonHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/holo_blue_light"
+        android:text="HELP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
