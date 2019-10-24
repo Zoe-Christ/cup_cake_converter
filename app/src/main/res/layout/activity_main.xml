@@ -15,7 +15,7 @@
         android:background="@android:color/background_light"
         android:ems="10"
         android:hint="quantity in kg"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:padding="5sp"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
         android:layout_height="73dp"
         android:background="@android:color/background_light"
         android:padding="5sp"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,15 +49,15 @@
         app:layout_constraintVertical_bias="0.222"
         tools:text="@string/convert" />
 
-    <Button
-        android:id="@+id/buttonHelp"
+    <ImageButton
+        android:id="@+id/imageButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/holo_blue_light"
-        android:text="@string/help"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.919"
+        app:layout_constraintHorizontal_bias="0.922"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hicon_2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
