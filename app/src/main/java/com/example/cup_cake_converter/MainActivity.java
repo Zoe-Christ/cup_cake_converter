@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
@@ -29,10 +30,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // hier soll per switch case der umrechnungsfaktor je nach Zutat gewählt werden
 
         EditText zutatenmenge = (EditText) findViewById(R.id.editTextMenge);
-        String mengenstring = zutatenmenge.getText().toString();
+        double mengendouble = Double.parseDouble(zutatenmenge.getText().toString());
 
         double umrechnungsfaktor;
-        umrechnungsfaktor = 0;
+        umrechnungsfaktor = 1;
 
         switch(zutatenstring){
             case "Mehl":
@@ -81,7 +82,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 throw new IllegalStateException("Unexpected value: " + zutatenstring);
         }
 
-        double ergebnis = 0;
+        double ergebnis = mengendouble / umrechnungsfaktor;
+
+        TextView ergebnisFeld = (TextView) findViewById(R.id.textViewErgebnis);
+        ergebnisFeld.setText("" + ergebnis);
 
 
 
