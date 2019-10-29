@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -25,12 +26,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         String zutatenstring = spinnerZutaten.getSelectedItem().toString();
 
-        // hier soll per switch case die richtige Umrechnungsformel je nach Zutat gewählt werden
+        // hier soll per switch case der umrechnungsfaktor je nach Zutat gewählt werden
 
-        
+        EditText zutatenmenge = (EditText) findViewById(R.id.editTextMenge);
+        String mengenstring = zutatenmenge.getText().toString();
+
+        double umrechnungsfaktor;
+        umrechnungsfaktor = 0;
 
 
-        
+
+
     }
 
     @Override
