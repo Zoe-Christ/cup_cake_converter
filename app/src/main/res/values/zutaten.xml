@@ -2,10 +2,19 @@
 <resources>
     <string-array name="zutaten_string">
         <item>Mehl</item>
+        <item>Puderzucker</item>
+        <item>Staerke</item>
         <item>Zucker</item>
         <item>Butter</item>
+        <item>ganze Nuesse</item>
         <item>Backpulver</item>
-        <item>Haselnüsse</item>
+        <item>geriebene Nuesse</item>
         <item>Kakaopulver</item>
+        <item>Oel</item>
+        <item>Ahornsirup</item>
+        <item>Chocolate Chips</item>
+        <item>Haferflocken</item>
+        <item>Honig</item>
+        <item>Kokosflocken</item>
     </string-array>
 </resources>
