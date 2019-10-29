@@ -23,6 +23,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinnerZutaten.setAdapter(adapter);
         spinnerZutaten.setOnItemSelectedListener(this);
 
+        String zutatenstring = spinnerZutaten.getSelectedItem().toString();
+
+        // hier soll per switch case die richtige Umrechnungsformel je nach Zutat gewählt werden
+
+        
+
+
         
     }
 
@@ -36,4 +43,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+
 }
