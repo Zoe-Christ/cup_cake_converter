@@ -34,6 +34,55 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         double umrechnungsfaktor;
         umrechnungsfaktor = 0;
 
+        switch(zutatenstring){
+            case "Mehl":
+                umrechnungsfaktor = 130;
+                break;
+            case "Puderzucker":
+                umrechnungsfaktor = 130;
+                break;
+            case "Staerke":
+                umrechnungsfaktor = 100;
+                break;
+            case "Zucker":
+                umrechnungsfaktor = 200;
+                break;
+            case "Butter":
+                umrechnungsfaktor = 225;
+                break;
+            case "ganze Nuesse":
+                umrechnungsfaktor = 112;
+                break;
+            case "Backpulver":
+                umrechnungsfaktor = 162;
+                break;
+            case "geriebene Nuesse":
+                umrechnungsfaktor = 160;
+                break;
+            case "Kakaopulver":
+                umrechnungsfaktor = 113;
+                break;
+            case "Oel":
+                umrechnungsfaktor = 224;
+                break;
+            case "Ahornsirup":
+                umrechnungsfaktor = 311;
+                break;
+            case "Chocolate Chips":
+                umrechnungsfaktor = 170;
+                break;
+            case "Haferflocken":
+                umrechnungsfaktor = 300;
+                break;
+            case "Kokosflocken":
+                umrechnungsfaktor = 80;
+                break;
+                default:
+                throw new IllegalStateException("Unexpected value: " + zutatenstring);
+        }
+
+        double ergebnis = 0;
+
 
 
     }
