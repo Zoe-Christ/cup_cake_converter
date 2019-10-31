@@ -26,18 +26,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinnerZutaten.setOnItemSelectedListener(this);
 
         // Zutaten vom Spinner als String
-        String zutatenstring = spinnerZutaten.getSelectedItem().toString();
+       String zutatenstring = spinnerZutaten.getSelectedItem().toString();
 
         //Eingabe Zutatenmenge als double speichern
-        EditText zutatenmenge = (EditText) findViewById(R.id.editTextMenge);
-        double mengendouble = 1.0;
-        mengendouble =Double.parseDouble(zutatenmenge.getText().toString());
+      EditText zutatenmenge = (EditText) findViewById(R.id.editTextMenge);
+      double mengendouble = 1.0;
+      //hier liegt der Fehler:
+      //mengendouble =Double.parseDouble(zutatenmenge.getEditableText().toString());
 
         // variable für den passenden Faktor je nach Zutat
-        double umrechnungsfaktor;
+       double umrechnungsfaktor = 1;
 
         // double in dem das Ergebnis gespeichert werden soll
-        double ergebnis = 1.0;
+       /* double ergebnis = 1.0;
 
         switch(zutatenstring){
             case "Mehl":
@@ -90,12 +91,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         ergebnis = mengendouble / umrechnungsfaktor;
 
-        //ergebnis auf activity_ergebnis anzeigen
-        //TextView ergebnisFeld = (TextView) findViewById(R.id.textViewErgebnis);
-       // ergebnisFeld.setText("" + ergebnis);
+
 
         TextView ergebnisFeld = (TextView) findViewById(R.id.textViewErgebnis);
-        ergebnisFeld.setText("" + ergebnis);
+        ergebnisFeld.setText("" + ergebnis); */
 
 
 

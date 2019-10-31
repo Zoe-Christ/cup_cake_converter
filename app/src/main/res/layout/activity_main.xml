@@ -49,7 +49,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextMenge"
         app:layout_constraintVertical_bias="0.222"
-        tools:text="@string/convert" />
+        android:text="@string/convert" />
 
     <ImageButton
         android:id="@+id/imageButton2"
