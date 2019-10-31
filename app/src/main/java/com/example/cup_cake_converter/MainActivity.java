@@ -32,13 +32,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
       EditText zutatenmenge = (EditText) findViewById(R.id.editTextMenge);
       double mengendouble = 1.0;
       //hier liegt der Fehler:
-      //mengendouble =Double.parseDouble(zutatenmenge.getEditableText().toString());
+      mengendouble =Double.parseDouble(zutatenmenge.getEditableText().toString());
 
         // variable für den passenden Faktor je nach Zutat
        double umrechnungsfaktor = 1;
 
         // double in dem das Ergebnis gespeichert werden soll
-       /* double ergebnis = 1.0;
+       double ergebnis = 1.0;
 
         switch(zutatenstring){
             case "Mehl":
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
         TextView ergebnisFeld = (TextView) findViewById(R.id.textViewErgebnis);
-        ergebnisFeld.setText("" + ergebnis); */
+        ergebnisFeld.setText("" + ergebnis);
 
 
 
