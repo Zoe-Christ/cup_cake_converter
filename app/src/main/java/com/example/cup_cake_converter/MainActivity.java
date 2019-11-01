@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -25,6 +26,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinnerZutaten.setAdapter(adapter);
         spinnerZutaten.setOnItemSelectedListener(this);
 
+        Button rechner = (Button) findViewById(R.id.buttonConverter);
+        rechner.setOnClickListener((v) -> {
+
         // Zutaten vom Spinner als String
        String zutatenstring = spinnerZutaten.getSelectedItem().toString();
 
@@ -32,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
       EditText zutatenmenge = (EditText) findViewById(R.id.editTextMenge);
       double mengendouble = 1.0;
       //hier liegt der Fehler:
-      mengendouble =Double.parseDouble(zutatenmenge.getEditableText().toString());
+      mengendouble =Double.parseDouble(zutatenmenge.getText().toString());
 
         // variable für den passenden Faktor je nach Zutat
        double umrechnungsfaktor = 1;
@@ -94,8 +98,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
         TextView ergebnisFeld = (TextView) findViewById(R.id.textViewErgebnis);
-        ergebnisFeld.setText("" + ergebnis);
+        ergebnisFeld.setText(Double.toString(ergebnis));
 
+        });
 
 
     }
