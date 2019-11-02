@@ -64,7 +64,7 @@
         app:srcCompat="@drawable/hicon_2" />
 
     <TextView
-        android:id="@+id/textViewErgebnis"
+        android:id="@+id/textViewErgibi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/background_light"

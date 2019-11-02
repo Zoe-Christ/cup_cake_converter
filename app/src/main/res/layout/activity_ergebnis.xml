@@ -2,54 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/textViewErgebnis"
+    android:id="@+id/textViewErgibi"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/hintergrund"
     tools:context=".Ergebnis">
 
     <TextView
-        android:id="@+id/textViewErgebnis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/background_light"
-        android:text="@string/ergebnis"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewMenge"
-        app:layout_constraintVertical_bias="0.305" />
-
-    <TextView
-        android:id="@+id/textViewMenge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/background_light"
-        android:text="@string/menge"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewZutat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/background_light"
-        android:text="@string/zutat"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewMenge"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.691" />
-
-    <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/background_light"
@@ -58,5 +18,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewErgebnis" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

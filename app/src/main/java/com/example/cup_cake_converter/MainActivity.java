@@ -2,6 +2,7 @@ package com.example.cup_cake_converter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+
+    // double in dem das Ergebnis gespeichert werden soll
+    double ergebnis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +45,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // variable für den passenden Faktor je nach Zutat
        double umrechnungsfaktor = 1;
 
-        // double in dem das Ergebnis gespeichert werden soll
-       double ergebnis = 1.0;
+
 
         switch(zutatenstring){
             case "Mehl":
@@ -96,14 +99,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ergebnis = mengendouble / umrechnungsfaktor;
 
 
-
-        TextView ergebnisFeld = (TextView) findViewById(R.id.textViewErgebnis);
-        ergebnisFeld.setText(Double.toString(ergebnis));
+        Intent wechsel = new Intent(this, Ergebnis.class);
+        wechsel.putExtra("wert", ergebnis);
+        startActivity(wechsel);
 
         });
 
 
     }
+
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
