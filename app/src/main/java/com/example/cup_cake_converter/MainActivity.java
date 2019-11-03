@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 
 
-        ergebnis = mengendouble / umrechnungsfaktor;
+        ergebnis =(mengendouble / umrechnungsfaktor);
 
 
         Intent wechsel = new Intent(this, Ergebnis.class);

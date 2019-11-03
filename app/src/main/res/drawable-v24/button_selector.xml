@@ -7,7 +7,7 @@
             <!-- SHADOW -->
             <item>
                 <shape>
-                    <solid android:color="@color/red_400"/>
+                    <solid android:color="@color/red"/>
                     <!-- alttan gölge -->
                     <corners android:radius="19dp"/>
                 </shape>
@@ -20,8 +20,8 @@
                 <shape>
                     <padding android:bottom="5dp"/>
                     <gradient
-                        android:startColor="#1c4985"
-                        android:endColor="#163969"
+                        android:startColor="#d8225f"
+                        android:endColor="#9c225d"
                         android:angle="270" />
                     <corners
                         android:radius="19dp"/>
