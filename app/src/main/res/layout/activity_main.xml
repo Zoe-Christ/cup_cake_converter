@@ -54,7 +54,7 @@
         android:text="@string/convert" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/hilfeImageBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
