@@ -5,4 +5,5 @@
     <string name="zutat">Zutat</string>
     <string name="menge">Menge</string>
     <string name="ergebnis">Ergebnis</string>
+    <string name="einheit">Einheit</string>
 </resources>

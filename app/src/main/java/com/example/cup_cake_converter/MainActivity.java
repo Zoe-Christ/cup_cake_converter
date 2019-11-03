@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,6 +18,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
+    HistoryDatabase historyDatabase;
+
     // double in dem das Ergebnis gespeichert werden soll
     double ergebnis;
 
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        historyDatabase = new HistoryDatabase(this);
 
         Spinner spinnerZutaten = (Spinner) findViewById(R.id.spinnerZutaten);
 
@@ -100,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         ergebnis = mengendouble / umrechnungsfaktor;
 
+        AddData(zutatenstring, mengendouble, ergebnis);
 
         Intent wechsel = new Intent(this, Ergebnis.class);
         wechsel.putExtra("wert", ergebnis);
@@ -113,9 +119,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             startActivity(zuHilfe);
         });
 
+        Button historyButton = (Button) findViewById(R.id.historyBtn);
+        historyButton.setOnClickListener((v) -> {
+            Intent goToHistory = new Intent(getApplicationContext(), History.class);
+            startActivity(goToHistory);
+        });
+
     }
 
 
+
+    public void AddData(String zutat, double menge, double ergebnis) {
+        boolean addedData = historyDatabase.addData(zutat, menge, ergebnis);
+        if(addedData == true)
+            Log.i("HistoryDatabase", "AddData: successful");
+        else
+            Log.i("HistoryDatabase", "AddData: not successful");
+    }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
