@@ -21,40 +21,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TableLayout
-        android:id="@+id/historyTable"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="50dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="25dp"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.100000024">
+        app:layout_constraintTop_toTopOf="parent">
 
-
-        <TableRow
-            android:id="@+id/row_1"
+        <TableLayout
+            android:id="@+id/historyTable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white">
+            android:layout_marginTop="50dp"
+            android:padding="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.100000024">
 
-            <!-- android:layout_span configure how many columns to span by this column. -->
-            <TextView
-                style="@style/HistoryTextView"
-                android:text="@string/zutat" />
+            <TableRow
+                android:id="@+id/row_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white">
 
-            <TextView
-                style="@style/HistoryTextView"
-                android:text="@string/menge" />
+                <!-- android:layout_span configure how many columns to span by this column. -->
+                <TextView
+                    style="@style/HistoryTextView"
+                    android:text="@string/zutat" />
 
-            <TextView
-                style="@style/HistoryTextView"
-                android:text="@string/ergebnis"/>
+                <TextView
+                    style="@style/HistoryTextView"
+                    android:text="@string/menge" />
 
-        </TableRow>
+                <TextView
+                    style="@style/HistoryTextView"
+                    android:text="@string/ergebnis" />
+
+            </TableRow>
 
 
-    </TableLayout>
+        </TableLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

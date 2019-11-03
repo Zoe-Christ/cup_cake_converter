@@ -23,7 +23,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@drawable/cell_border"
-        android:textAlignment="gravity"
+        android:textAlignment="viewEnd"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:textColor="@color/black"

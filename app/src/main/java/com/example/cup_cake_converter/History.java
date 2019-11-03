@@ -35,7 +35,7 @@ public class History extends AppCompatActivity {
 
         tableLayout = (TableLayout) findViewById(R.id.historyTable);
         historyDatabase = new HistoryDatabase(this);
-
+        // historyDatabase.clearDatabase();
         fillTable();
     }
 

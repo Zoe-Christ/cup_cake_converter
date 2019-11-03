@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 
 
-        ergebnis = mengendouble / umrechnungsfaktor;
+        ergebnis = (Math.round((mengendouble / umrechnungsfaktor)*100.0)) / 100.0;
 
         AddData(zutatenstring, mengendouble, ergebnis);
 
