@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hintergrund"
+    tools:context=".History">
+
+    <Button
+        android:id="@+id/backFromHisBtn"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:background="@android:color/background_light"
+        android:padding="5sp"
+        android:text="Zurück"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="25dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableLayout
+            android:id="@+id/historyTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:padding="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.100000024">
+
+            <TableRow
+                android:id="@+id/row_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white">
+
+                <!-- android:layout_span configure how many columns to span by this column. -->
+                <TextView
+                    style="@style/HistoryTextView"
+                    android:text="@string/zutat" />
+
+                <TextView
+                    style="@style/HistoryTextView"
+                    android:text="@string/menge" />
+
+                <TextView
+                    style="@style/HistoryTextView"
+                    android:text="@string/ergebnis" />
+
+            </TableRow>
+
+
+        </TableLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
