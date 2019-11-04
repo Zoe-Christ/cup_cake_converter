@@ -14,7 +14,7 @@
         android:layout_marginTop="80dp"
         android:background="@drawable/corners_round"
         android:ems="10"
-        android:hint="quantity in gram"
+        android:hint="Menge in Gramm"
         android:inputType="number"
         android:padding="5sp"
         android:text=""
