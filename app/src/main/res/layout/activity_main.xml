@@ -53,17 +53,6 @@
         app:layout_constraintVertical_bias="0.222"
         android:text="@string/convert" />
 
-    <ImageButton
-        android:id="@+id/hilfeImageBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.922"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hicon_2" />
-
     <Button
         android:id="@+id/historyBtn"
         android:layout_width="100dp"
@@ -77,5 +66,22 @@
         app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonhelp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_button"
+        android:padding="10dp"
+        android:text="\?"
+        android:layout_marginTop="43dp"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        tools:layout_editor_absoluteX="191dp"
+        tools:layout_editor_absoluteY="42dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

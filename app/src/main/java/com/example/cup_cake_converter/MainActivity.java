@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         });
 
-        ImageButton hilfeImageBtn = (ImageButton) findViewById(R.id.hilfeImageBtn);
+        Button hilfeImageBtn = (Button) findViewById(R.id.buttonhelp);
         hilfeImageBtn.setOnClickListener((v) -> {
             Intent zuHilfe = new Intent(getApplicationContext(), HilfeSeite.class);
             startActivity(zuHilfe);
