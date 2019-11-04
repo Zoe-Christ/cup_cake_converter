@@ -3,6 +3,7 @@ package com.example.cup_cake_converter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,13 +15,17 @@ public class Ergebnis extends AppCompatActivity {
         setContentView(R.layout.activity_ergebnis);
 
         //Hier deine TextView initialisieren mit findViewById und so
-         Double d = getIntent().getExtras().getDouble("wert");
-        /*Toast toast;
-         toast = Toast.makeText(this, ""+d, Toast.LENGTH_SHORT);
-        toast.show(); */
+         double d = getIntent().getExtras().getDouble("wert");
 
-        TextView ergebnisView = (TextView) findViewById(R.id.textViewE);
-        ergebnisView.setText("" + d);
+        //TextView ergebnisView = (TextView) findViewById(R.id.textViewE);
+       // ergebnisView.setText("" + d);
+
+         EditText ergebnis = (EditText) findViewById(R.id.editTextErgebnis);
+
+       // String s = getIntent().getExtras().getString("zutat");
+        String c = getIntent().getExtras().getString("menge");
+
+        ergebnis.setText(c);
 
 
     }

@@ -107,9 +107,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         AddData(zutatenstring, mengendouble, ergebnis);
 
-        Intent wechsel = new Intent(this, Ergebnis.class);
+       /* Intent wechsel = new Intent(this, Ergebnis.class);
         wechsel.putExtra("wert", ergebnis);
         startActivity(wechsel);
+
+        Intent zutatenIntent = new Intent(this, Ergebnis.class);
+        zutatenIntent.putExtra("zutat", zutatenstring);
+        startActivity(zutatenIntent); */
+
+       String s = "" + mengendouble + " g " + zutatenstring + " entsprechen " + ergebnis + " cups gefüllt mit " + zutatenstring;
+
+        Intent mengenIntent = new Intent(this, Ergebnis.class);
+        mengenIntent.putExtra("menge", s);
+        startActivity(mengenIntent);
 
         });
 
