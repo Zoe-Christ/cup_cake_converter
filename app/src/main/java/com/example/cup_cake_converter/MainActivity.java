@@ -44,13 +44,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
        String zutatenstring = spinnerZutaten.getSelectedItem().toString();
 
         //Eingabe Zutatenmenge als double speichern
-      EditText zutatenmenge = (EditText) findViewById(R.id.editTextMenge);
-      double mengendouble = 1.0;
-      //hier liegt der Fehler:
-      mengendouble =Double.parseDouble(zutatenmenge.getText().toString());
+        EditText zutatenmenge = (EditText) findViewById(R.id.editTextMenge);
+        double mengendouble = 1.0;
+        mengendouble = Double.parseDouble(zutatenmenge.getText().toString());
 
         // variable für den passenden Faktor je nach Zutat
-       double umrechnungsfaktor = 1;
+        double umrechnungsfaktor = 1;
 
 
 
