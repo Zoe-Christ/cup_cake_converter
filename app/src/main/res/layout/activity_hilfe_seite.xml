@@ -16,46 +16,36 @@
         android:padding="5sp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
-        android:text="Converter"
+        android:text="Zurück"
         android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/hilfeMultiText"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@color/bodyRowTableBackground"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:padding="5sp"
-        android:text="In dieser App wird von Gramm oder Mililiter in amerikanische Cups konvertiert. Eine amerikanische Cup fasst ca 240 ml. Das entspricht einer Tasse mit einem Durchmesser von 10 cm und einer Höhe von 6cm.
-            \nAchtung: Die Größe einer Cup kann von Land zu Land unterschiedlich sein.\nIn der Historie kannst du alle Berechnungen sehen, die du bereits durchgeführt hast."
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="130dp">
+        <EditText
+            android:id="@+id/hilfeMultiText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/bodyRowTableBackground"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:padding="5sp"
+            android:text="In dieser App wird von Gramm oder Mililiter in amerikanische Cups konvertiert. Eine amerikanische Cup fasst ca 240 ml. Das entspricht einer Tasse mit einem Durchmesser von 10 cm und einer Höhe von 6cm.
+                \nAchtung: Die Größe einer Cup kann von Land zu Land unterschiedlich sein.\nIn der Historie kannst du alle Berechnungen sehen, die du bereits durchgeführt hast."
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/hilfeHeaderTextView"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_selector"
-        android:gravity="top|left"
-        android:padding="5sp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="32dp"
-        android:text="Hilfe"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

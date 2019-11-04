@@ -15,27 +15,25 @@
         android:layout_marginLeft="16dp"
         android:background="@drawable/button_selector"
         android:padding="5sp"
-        android:text="Converter"
+        android:text="Zurück"
         android:textAllCaps="false"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/hilfeHeaderTextView"
+    <Button
+        android:id="@+id/clearDatabaseBtn"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_selector"
-        android:gravity="top|left"
-        android:padding="5sp"
-        android:layout_marginRight="16dp"
         android:layout_marginTop="32dp"
-        android:text="Historie"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/button_selector"
+        android:padding="5sp"
+        android:text="Daten löschen"
+        android:textAllCaps="false"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ScrollView
         android:id="@+id/historyScrollView"
@@ -87,18 +85,6 @@
 
     </ScrollView>
 
-    <Button
-        android:id="@+id/clearDatabaseBtn"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/button_selector"
-        android:padding="5sp"
-        android:text="Daten löschen"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
