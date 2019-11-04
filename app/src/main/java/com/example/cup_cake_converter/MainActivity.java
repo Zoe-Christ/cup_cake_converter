@@ -115,11 +115,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         zutatenIntent.putExtra("zutat", zutatenstring);
         startActivity(zutatenIntent); */
 
-       String s = "" + mengendouble + " g " + zutatenstring + " entsprechen " + ergebnis + " cups gefüllt mit " + zutatenstring;
+       String s = "" + mengendouble + " g " + zutatenstring + " entsprechen " + ergebnis + " cups";
 
         Intent mengenIntent = new Intent(this, Ergebnis.class);
         mengenIntent.putExtra("menge", s);
         startActivity(mengenIntent);
+
+        zutatenmenge.setText("" + 0);
 
         });
 
