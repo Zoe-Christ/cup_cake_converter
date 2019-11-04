@@ -62,13 +62,13 @@
         app:layout_constraintHorizontal_bias="0.922"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hicon_2" />
+        app:srcCompat="@drawable/hicon_2"/>
 
     <Button
         android:id="@+id/historyBtn"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/button_selector"
         android:padding="5sp"
         android:text="Historie"
