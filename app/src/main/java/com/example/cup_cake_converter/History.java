@@ -74,7 +74,7 @@ public class History extends AppCompatActivity {
             TextView ergebnisTextView = (TextView) tableRow.findViewById(R.id.tv3);
             ergebnisTextView.setText("" + berechnungsListe.get(i).ergebnis);
 
-            tableRow.setBackgroundColor(getResources().getColor(R.color.white));
+            //tableRow.setBackgroundColor(getResources().getColor(R.color.white));
 
             tableLayout.addView(tableRow);
         }

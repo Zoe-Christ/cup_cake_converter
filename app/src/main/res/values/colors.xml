@@ -6,4 +6,6 @@
     <color name="red">#333333</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="topRowTableBackground">#EA899A</color>
+    <color name="bodyRowTableBackground">#F4D4D7</color>
 </resources>
