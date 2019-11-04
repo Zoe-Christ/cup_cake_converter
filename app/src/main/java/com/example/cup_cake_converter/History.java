@@ -37,6 +37,16 @@ public class History extends AppCompatActivity {
         historyDatabase = new HistoryDatabase(this);
         // historyDatabase.clearDatabase();
         fillTable();
+
+        Button clearDataBtn = (Button) findViewById(R.id.clearDatabaseBtn);
+        clearDataBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearDatabase();
+                finish();
+                startActivity(getIntent());
+            }
+        });
     }
 
     public void fillTable() {
@@ -79,13 +89,9 @@ public class History extends AppCompatActivity {
             tableLayout.addView(tableRow);
         }
 
+    }
 
-
-        // Set new table row layout parameters.
-        // TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
-        // tableRow.setLayoutParams(layoutParams);
-
-
-
+    public void clearDatabase() {
+        historyDatabase.clearDatabase();
     }
 }

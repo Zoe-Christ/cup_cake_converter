@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         mengenIntent.putExtra("menge", s);
         startActivity(mengenIntent);
 
-        zutatenmenge.setText("" + 0);
+        zutatenmenge.setText("");
 
         });
 
