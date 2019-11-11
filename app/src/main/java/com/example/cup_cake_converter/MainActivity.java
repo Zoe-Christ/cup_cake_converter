@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinnerZutaten.setAdapter(adapter);
         spinnerZutaten.setOnItemSelectedListener(this);
 
+
+
         //Button zum Start der Konvertierung
         Button rechner = (Button) findViewById(R.id.buttonConverter);
         rechner.setOnClickListener((v) -> {
@@ -46,82 +48,90 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // Zutaten vom Spinner als String
        String zutatenstring = spinnerZutaten.getSelectedItem().toString();
 
-        //Eingabe Zutatenmenge als double speichern
-        EditText zutatenmenge = (EditText) findViewById(R.id.editTextMenge);
-        double mengendouble = 1.0;
-        mengendouble = Double.parseDouble(zutatenmenge.getText().toString());
+       //Eingabe Zutatenmenge als double speichern
+            EditText zutatenmenge = (EditText) findViewById(R.id.editTextMenge);
 
-        // variable für den passenden Faktor je nach Zutat
-        double umrechnungsfaktor = 1;
+            if(zutatenmenge.getText().length() == 0) {
+                Toast.makeText(getApplicationContext(), "Bitte Menge eingeben", Toast.LENGTH_SHORT).show();
+            } else {
+
+                double mengendouble = 1.0;
+                mengendouble = Double.parseDouble(zutatenmenge.getText().toString());
 
 
-        // je nach Zutate einen anderen Umrechnungsfaktor wählen
-        switch(zutatenstring){
-            case "Mehl":
-                umrechnungsfaktor = 130;
-                break;
-            case "Puderzucker":
-                umrechnungsfaktor = 130;
-                break;
-            case "Staerke":
-                umrechnungsfaktor = 100;
-                break;
-            case "Zucker":
-                umrechnungsfaktor = 200;
-                break;
-            case "Butter":
-                umrechnungsfaktor = 225;
-                break;
-            case "ganze Nuesse":
-                umrechnungsfaktor = 112;
-                break;
-            case "Backpulver":
-                umrechnungsfaktor = 162;
-                break;
-            case "geriebene Nuesse":
-                umrechnungsfaktor = 160;
-                break;
-            case "Kakaopulver":
-                umrechnungsfaktor = 113;
-                break;
-            case "Oel":
-                umrechnungsfaktor = 224;
-                break;
-            case "Ahornsirup":
-                umrechnungsfaktor = 311;
-                break;
-            case "Chocolate Chips":
-                umrechnungsfaktor = 170;
-                break;
-            case "Honig":
-                umrechnungsfaktor = 340;
-                break;
-            case "Haferflocken":
-                umrechnungsfaktor = 300;
-                break;
-            case "Kokosflocken":
-                umrechnungsfaktor = 80;
-                break;
-                default:
-               umrechnungsfaktor = 1;
-               break;
-        }
+                // variable für den passenden Faktor je nach Zutat
+                double umrechnungsfaktor = 1;
 
-        //Ergebnis auf zwei Nachkommastellen runden
-        ergebnis = (Math.round((mengendouble / umrechnungsfaktor)*100.0)) / 100.0;
 
-        AddData(zutatenstring, mengendouble, ergebnis);
+                // je nach Zutate einen anderen Umrechnungsfaktor wählen
+                switch (zutatenstring) {
+                    case "Mehl":
+                        umrechnungsfaktor = 130;
+                        break;
+                    case "Puderzucker":
+                        umrechnungsfaktor = 130;
+                        break;
+                    case "Staerke":
+                        umrechnungsfaktor = 100;
+                        break;
+                    case "Zucker":
+                        umrechnungsfaktor = 200;
+                        break;
+                    case "Butter":
+                        umrechnungsfaktor = 225;
+                        break;
+                    case "ganze Nuesse":
+                        umrechnungsfaktor = 112;
+                        break;
+                    case "Backpulver":
+                        umrechnungsfaktor = 162;
+                        break;
+                    case "geriebene Nuesse":
+                        umrechnungsfaktor = 160;
+                        break;
+                    case "Kakaopulver":
+                        umrechnungsfaktor = 113;
+                        break;
+                    case "Oel":
+                        umrechnungsfaktor = 224;
+                        break;
+                    case "Ahornsirup":
+                        umrechnungsfaktor = 311;
+                        break;
+                    case "Chocolate Chips":
+                        umrechnungsfaktor = 170;
+                        break;
+                    case "Honig":
+                        umrechnungsfaktor = 340;
+                        break;
+                    case "Haferflocken":
+                        umrechnungsfaktor = 300;
+                        break;
+                    case "Kokosflocken":
+                        umrechnungsfaktor = 80;
+                        break;
+                    default:
+                        umrechnungsfaktor = 1;
+                        break;
+                }
 
-        //als Ergebnis anzuzeigenden String erstellen
-       String s = "" + mengendouble + " g " + zutatenstring + " entsprechen " + ergebnis + " cups";
+                //Ergebnis auf zwei Nachkommastellen runden
+                ergebnis = (Math.round((mengendouble / umrechnungsfaktor) * 100.0)) / 100.0;
 
-       // Intent mit Ergebnisstring
-        Intent mengenIntent = new Intent(this, Ergebnis.class);
-        mengenIntent.putExtra("menge", s);
-        startActivity(mengenIntent);
+                AddData(zutatenstring, mengendouble, ergebnis);
 
-        //Inhalt Textfeld leeren
-        zutatenmenge.setText("");
+                //als Ergebnis anzuzeigenden String erstellen
+                String s = "" + mengendouble + " g " + zutatenstring + " entsprechen " + ergebnis + " cups";
+
+                // Intent mit Ergebnisstring
+                Intent mengenIntent = new Intent(this, Ergebnis.class);
+                mengenIntent.putExtra("menge", s);
+                startActivity(mengenIntent);
+
+                //Inhalt Textfeld leeren
+                zutatenmenge.setText("");
+
+            }
 
         });
 
@@ -154,8 +164,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String sSelected = parent.getItemAtPosition(position).toString();
-        Toast.makeText(this, sSelected, Toast.LENGTH_SHORT).show();
-    }
+            }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
