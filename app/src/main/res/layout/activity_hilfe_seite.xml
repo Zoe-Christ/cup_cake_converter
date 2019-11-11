@@ -19,33 +19,56 @@
         android:text="Zurück"
         android:textAllCaps="false"
         android:textSize="18sp"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="130dp">
-        <EditText
-            android:id="@+id/hilfeMultiText"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="10dp">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@color/bodyRowTableBackground"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:padding="5sp"
-            android:text="In dieser App wird von Gramm oder Mililiter in amerikanische Cups konvertiert. Eine amerikanische Cup fasst ca 240 ml. Das entspricht einer Tasse mit einem Durchmesser von 10 cm und einer Höhe von 6cm.
-                \nAchtung: Die Größe einer Cup kann von Land zu Land unterschiedlich sein.\nIn der Historie kannst du alle Berechnungen sehen, die du bereits durchgeführt hast."
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:fadeScrollbars="true"
+            android:isScrollContainer="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            tools:layout_editor_absoluteY="130dp">
+
+            <EditText
+                android:id="@+id/hilfeMultiText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/bodyRowTableBackground"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:padding="5sp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/hilfeText"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                app:srcCompat="@drawable/konvertierungstabelle" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

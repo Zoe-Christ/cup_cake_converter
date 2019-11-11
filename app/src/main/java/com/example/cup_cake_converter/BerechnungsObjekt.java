@@ -1,6 +1,7 @@
 package com.example.cup_cake_converter;
 
-public class BerechnungsObjekt {
+//Klasse für die Erstellung von Objekten bestehend aus
+public class BerechnungsObjekt implements Comparable<BerechnungsObjekt>{
     int id;
     String zutat;
     double menge;
@@ -13,4 +14,9 @@ public class BerechnungsObjekt {
         ergebnis =e;
     }
 
+    @Override
+    public int compareTo(BerechnungsObjekt berechnung) {
+        int compareId = ((BerechnungsObjekt)berechnung).id;
+        return compareId - this.id;
+    }
 }

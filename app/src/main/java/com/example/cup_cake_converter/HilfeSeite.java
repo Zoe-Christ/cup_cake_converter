@@ -16,6 +16,7 @@ public class HilfeSeite extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hilfe_seite);
 
+        //Button um zurück zur vorherigen Seite zu gelangen
         Button backBtn = (Button) findViewById(R.id.backBtn);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,6 +26,7 @@ public class HilfeSeite extends AppCompatActivity {
             }
         });
 
+        //Text lässt sich nicht verändern
         EditText hilfeMultiLine = (EditText) findViewById(R.id.hilfeMultiText);
         hilfeMultiLine.setKeyListener(null);
     }

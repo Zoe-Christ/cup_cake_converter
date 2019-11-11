@@ -6,4 +6,18 @@
     <string name="menge">Menge</string>
     <string name="ergebnis">Ergebnis</string>
     <string name="einheit">Einheit</string>
+    <string name="hilfeText">
+        <b>Hilfe</b>\n\n
+        In dieser App werden Mengen, die in Gramm oder Mililiter gegeben sind,
+        in amerikanische Cups konvertiert.
+        \nEine amerikanische Cup fasst ca 240 ml. Das entspricht einer Tasse mit einem Durchmesser
+        von 10 cm und einer Höhe von 6cm.
+        \nAchtung: Die Größe einer Cup kann von Land zu Land unterschiedlich sein.\n
+        \nÜber den <i>Historie-Button</i> auf der Startseite erreichen Sie eine Darstellung, in der alle
+        Berechnungen, die Sie bereits durchgeführt haben, aufgelistet sind.\n
+        \nAuf jeder Seite befindet sich außerdem oben links ein <i>zurück-Button</i>  über den Sie auf die
+        vorherige Seite zurück gelangen können.\n
+        \nIm Folgenden finden Sie die <b>Konvertierungsfaktoren</b>, auf denen die Umrechnungen in der App basieren.
+    </string>
+
 </resources>

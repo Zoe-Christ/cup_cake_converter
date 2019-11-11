@@ -14,10 +14,12 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class History extends AppCompatActivity {
     TableLayout tableLayout;
     HistoryDatabase historyDatabase;
+    ArrayList<BerechnungsObjekt> berechnungsListe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +37,9 @@ public class History extends AppCompatActivity {
 
         tableLayout = (TableLayout) findViewById(R.id.historyTable);
         historyDatabase = new HistoryDatabase(this);
-        // historyDatabase.clearDatabase();
         fillTable();
 
+        // Referenz auf den Button zur Leerung der Datenbank
         Button clearDataBtn = (Button) findViewById(R.id.clearDatabaseBtn);
         clearDataBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,9 +51,10 @@ public class History extends AppCompatActivity {
         });
     }
 
+    // Befüllen der Tabelle mit den Daten aus der Datenbank
     public void fillTable() {
         Cursor data = historyDatabase.getAllData();
-        ArrayList<BerechnungsObjekt> berechnungsListe = new ArrayList<BerechnungsObjekt>();
+        berechnungsListe = new ArrayList<BerechnungsObjekt>();
 
         while (data.moveToNext()) {
             Integer id = data.getInt(0);
@@ -63,16 +66,15 @@ public class History extends AppCompatActivity {
 
             berechnungsListe.add(berechnungsObjekt);
         }
-
+        Collections.sort(berechnungsListe);
         Context context = getApplicationContext();
 
         for(int i=0; i<berechnungsListe.size(); i++) {
-            // Create a new table row.
-            // TableRow tableRow = new TableRow(context);
+            // neue Tabellenreihe
             LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             TableRow tableRow = (TableRow) inflater.inflate(R.layout.history_tablerow, null);
 
-            // Add zutatenTextView
+            // zutatenTextView
             TextView zutatenTextView = (TextView) tableRow.findViewById(R.id.tv1);
             zutatenTextView.setText(berechnungsListe.get(i).zutat);
 
@@ -80,18 +82,19 @@ public class History extends AppCompatActivity {
             TextView mengenTextView = (TextView) tableRow.findViewById(R.id.tv2);
             mengenTextView.setText("" + berechnungsListe.get(i).menge);
 
-            // Add ergebnisTextView
+            // ergebnisTextView
             TextView ergebnisTextView = (TextView) tableRow.findViewById(R.id.tv3);
             ergebnisTextView.setText("" + berechnungsListe.get(i).ergebnis);
-
-            //tableRow.setBackgroundColor(getResources().getColor(R.color.white));
 
             tableLayout.addView(tableRow);
         }
 
     }
 
+    //Methode zur Leerung der Datenbank
     public void clearDatabase() {
         historyDatabase.clearDatabase();
     }
+
+
 }
