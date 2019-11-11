@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     HistoryDatabase historyDatabase;
 
-    // double in dem das Ergebnis gespeichert werden soll
+    // double in dem das Ergebnis der Berechnung gespeichert werden soll
     double ergebnis;
 
     @Override
@@ -28,8 +28,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Datenbank zur Speicherung der Bercehnungen
         historyDatabase = new HistoryDatabase(this);
 
+        // Dropdownliste mit auswählbaren Zutaten
         Spinner spinnerZutaten = (Spinner) findViewById(R.id.spinnerZutaten);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.zutaten_string, android.R.layout.simple_spinner_item);
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinnerZutaten.setAdapter(adapter);
         spinnerZutaten.setOnItemSelectedListener(this);
 
+        //Button zum Start der Konvertierung
         Button rechner = (Button) findViewById(R.id.buttonConverter);
         rechner.setOnClickListener((v) -> {
 
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         double umrechnungsfaktor = 1;
 
 
-
+        // je nach Zutate einen anderen Umrechnungsfaktor wählen
         switch(zutatenstring){
             case "Mehl":
                 umrechnungsfaktor = 130;
@@ -90,6 +93,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             case "Chocolate Chips":
                 umrechnungsfaktor = 170;
                 break;
+            case "Honig":
+                umrechnungsfaktor = 340;
+                break;
             case "Haferflocken":
                 umrechnungsfaktor = 300;
                 break;
@@ -101,35 +107,32 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                break;
         }
 
-
+        //Ergebnis auf zwei Nachkommastellen runden
         ergebnis = (Math.round((mengendouble / umrechnungsfaktor)*100.0)) / 100.0;
 
         AddData(zutatenstring, mengendouble, ergebnis);
 
-       /* Intent wechsel = new Intent(this, Ergebnis.class);
-        wechsel.putExtra("wert", ergebnis);
-        startActivity(wechsel);
-
-        Intent zutatenIntent = new Intent(this, Ergebnis.class);
-        zutatenIntent.putExtra("zutat", zutatenstring);
-        startActivity(zutatenIntent); */
-
+        //als Ergebnis anzuzeigenden String erstellen
        String s = "" + mengendouble + " g " + zutatenstring + " entsprechen " + ergebnis + " cups";
 
+       // Intent mit Ergebnisstring
         Intent mengenIntent = new Intent(this, Ergebnis.class);
         mengenIntent.putExtra("menge", s);
         startActivity(mengenIntent);
 
+        //Inhalt Textfeld leeren
         zutatenmenge.setText("");
 
         });
 
+        // Button um zur Hilfeseite zu gelangen
         Button hilfeImageBtn = (Button) findViewById(R.id.buttonhelp);
         hilfeImageBtn.setOnClickListener((v) -> {
             Intent zuHilfe = new Intent(getApplicationContext(), HilfeSeite.class);
             startActivity(zuHilfe);
         });
 
+        //Button um zur Historie zu gelangen
         Button historyButton = (Button) findViewById(R.id.historyBtn);
         historyButton.setOnClickListener((v) -> {
             Intent goToHistory = new Intent(getApplicationContext(), History.class);

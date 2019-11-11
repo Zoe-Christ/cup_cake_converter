@@ -17,6 +17,7 @@ public class Ergebnis extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ergebnis);
 
+        //Zurückbutton
         Button backBtn = (Button) findViewById(R.id.buttonErgebnisN);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,17 +27,16 @@ public class Ergebnis extends AppCompatActivity {
             }
         });
 
-        //Hier deine TextView initialisieren mit findViewById und so
+        // Intent abrufen
          double d = getIntent().getExtras().getDouble("wert");
 
-        //TextView ergebnisView = (TextView) findViewById(R.id.textViewE);
-       // ergebnisView.setText("" + d);
-
+        // Edittext Ergebnis erstellen
          EditText ergebnis = (EditText) findViewById(R.id.editTextErgebnis);
 
-       // String s = getIntent().getExtras().getString("zutat");
+       // Intent Ergebnisstring abrufen
         String c = getIntent().getExtras().getString("menge");
 
+        // Ergebnis anzeigen
         ergebnis.setText(c);
 
 
